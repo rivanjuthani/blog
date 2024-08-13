@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# simple build script, does the job
+
 echo "installing go packages..."
 
 go get
