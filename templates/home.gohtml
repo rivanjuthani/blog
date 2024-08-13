@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com?plugins=typography"></script>
+    <title>Posts - Rivan's Blog</title>
+</head>
+
+<body>
+    <nav class="flex items-center justify-between bg-gray-800 p-2 mb-4">
+        <div class="flex items-center flex-shrink-0 text-white mr-6">
+            <span class="font-semibold text-xl tracking-tight">Rivan's Blog</span>
+        </div>
+        <div class="block">
+            <ul class="flex space-x-1">
+                <li><a href="/" class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">Home</a></li>
+                <li><a href="mailto:rjuthani@umass.edu?subject=Hello" class="text-gray-300 hover:bg-gray-700 px-3 py-2 rounded">Email Me</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container mx-auto mb-3">
+        <h1 class="text-4xl font-bold text-center">Articles</h1>
+        <div class="text-center text-sm mb-4">
+            <p class="text-gray-500"></p>
+        </div>
+        <div class="prose max-w-full max-lg:p-4">
+            {{range $val := .Posts}}
+                <div class="">
+                    <span class="text-gray-500 text-sm">{{$val.StringDate}}</span>&nbsp;<a href="/posts/{{$val.Slug}}" class="text-blue-500 hover:text-blue-900 no-underline">{{$val.Title}}</a><span class="text-gray-500 text-sm">&nbsp;in:&nbsp;{{$val.Tags}}</span>
+                </div>
+            {{end}}
+        </div>
+    </div>
+</body>
+
+</html>
